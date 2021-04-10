@@ -10,3 +10,5 @@ export function rps(left, right) {
     ? "left"
     : "right";
 }
+
+export const randomWeapon = () => ["rock", "paper", "scissors"][Math.floor(Math.random() * 3)];
