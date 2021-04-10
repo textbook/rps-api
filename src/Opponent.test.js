@@ -19,4 +19,18 @@ describe("Opponent component", () => {
     expect(screen.getByTestId("opponent-name")).toHaveTextContent("Brittany Arnold");
     expect(screen.getByTestId("opponent-avatar")).toHaveAttribute("src", thumbnail);
   });
+
+  it("doesn't show the opponent's weapon initially", () => {
+    render(<Opponent opponent={{ name: {}, picture: {} }} />);
+  
+    expect(screen.queryByTestId("opponent-weapon")).not.toBeInTheDocument();
+  });
+  
+  it("shows the opponent's weapon once selected", () => {
+    const weapon = "scissors";
+  
+    render(<Opponent weapon={weapon} opponent={{ name: {}, picture: {} }} />);
+  
+    expect(screen.getByTestId("opponent-weapon")).toHaveTextContent(weapon);
+  });
 });
