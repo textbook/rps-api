@@ -33,7 +33,10 @@
         ],
         "files": [
           "cypress/**/*.js"
-        ]
+        ],
+        "rules": {
+          "jest/valid-expect-in-promise": "off"
+        }
       }
     ]
   },
